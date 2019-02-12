@@ -1,0 +1,3 @@
+<app-user-detail *ngIf='selectedUser'  [user]='selectedUser' ></app-user-detail>
+<app-post-detail *ngIf='selectedUserPost'  [post]='selectedUserPost'></app-post-detail>
+<app-user [user]='user' (SelectedUser)='userClickEvent($event)' (SelectedUserPost)='userClickEvent($event)'  ></app-user>
