@@ -16,14 +16,13 @@ const httpOptions = {
   providedIn: "root"
 })
 export class RequestService {
-  BASE_URL = "http://api.football-data.org/v2/competitions/2019/matches";
+  MATCH_URL = "http://api.football-data.org/v2/competitions/2019/matches";
 
   constructor(private http: HttpClient) {}
 
   getMatch(): Observable<Match[]> {
-    console.log(this.BASE_URL,httpOptions);
-
-    return this.http.get(this.BASE_URL, httpOptions)
+    console.log(this.MATCH_URL ,httpOptions);
+    return this.http.get(this.MATCH_URL, httpOptions)
     .pipe(
         map(
           (response: Match[]) => {
@@ -32,4 +31,6 @@ export class RequestService {
           })
     );
   }
+
+
 }
