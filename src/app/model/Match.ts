@@ -8,7 +8,7 @@ idHomeTeam: number;
 awayScore: number;
 homeScore: number;
 matchday: number;
-matchdate: Date;
+matchdate: string;
 matcherefrees: [];
 
 static convMatchJson(json:any): Match {
@@ -22,7 +22,7 @@ static convMatchJson(json:any): Match {
   match.awayScore = json.score.fullTime.awayTeam;
   match.homeScore = json.score.fullTime.homeTeam;
   match.matchday = json.matchday;
-  match.matchdate = json.utcDate;
+  match.matchdate = new Date(json.utcDate).toLocaleDateString();
   match.matcherefrees =  json.referees;
   return match;
 

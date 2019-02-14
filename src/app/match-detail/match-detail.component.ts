@@ -9,7 +9,7 @@ import { Match } from '../model/Match';
 export class MatchDetailComponent implements OnInit {
 
   @Input()
-  match: Match[];
+  match: Match;
 
   constructor() { }
 

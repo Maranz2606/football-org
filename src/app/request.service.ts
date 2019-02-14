@@ -33,6 +33,7 @@ export class RequestService {
 
   getMatchByID(id: number): Observable<Match> {
     const url = "http://api.football-data.org/v2/matches" + "/" + id;
+    console.log(url);
     return this.http.get(url, httpOptions).pipe(
       map((response: Match[]) => {
         console.log(response['match']);
