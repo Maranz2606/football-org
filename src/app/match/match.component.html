@@ -1,0 +1,9 @@
+<h2>Matches</h2>
+<ul class="matches">
+  <li *ngFor="let match of matches">
+    <span class="badge" (click) = "matchSelected.emit(match)"
+      >{{ match.homeTeam }}{{ match.homeScore }} - {{ match.awayScore }} :
+      {{ match.awayTeam }}
+    </span>
+  </li>
+</ul>
