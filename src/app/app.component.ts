@@ -26,6 +26,7 @@ export class AppComponent {
   }
 
   matchAfterSelection(match: Match) {
+    console.log(match.idmatch);
     this.request.getMatchByID(match.idmatch)
       .subscribe(MatchDetail => {
         this.matchSelected = MatchDetail;
