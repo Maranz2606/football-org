@@ -36,9 +36,15 @@ export class RequestService {
     console.log(url);
     return this.http.get(url, httpOptions).pipe(
       map((response: Match[]) => {
-        console.log(response['match']);
-        return Match.convMatchJson(response['match']);
+        console.log(response["match"]);
+        return Match.convMatchJson(response["match"]);
       })
     );
+  }
+
+  getData(url: string) {
+    return this.http.get(url, {
+      headers: { "X-Auth-Token": "aa89ef54a73b4df6a2e389906426b90b" }
+    });
   }
 }

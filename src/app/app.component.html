@@ -1,4 +1,5 @@
 <h2>FOOTBALL-ORG</h2>
+<app-team-detail *ngIf="teamSelected"></app-team-detail>
 <app-match-detail *ngIf="matchSelected" [match] = "matchSelected"></app-match-detail>
-
 <app-match [matches]="matches" (matchSelected)="matchAfterSelection($event)"></app-match>
+<router-outlet></router-outlet>

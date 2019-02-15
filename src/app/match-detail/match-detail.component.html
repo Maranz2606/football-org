@@ -1,11 +1,14 @@
 <h2>Match detail</h2>
 <p></p>
-<h3>giornata {{match.matchday}} - {{match.matchdate}}</h3>
-{{match.awayTeam}} {{match.awayScore}}-{{match.homeScore}} {{match.homeTeam}} <p>
-</p>
-<b>arbitri:</b><br>
+
+<h3>giornata {{ match.matchday }} - {{ match.matchdate }}</h3>
+<a routerLink="/team/{{match.idAwayTeam}}">{{ match.awayTeam }}</a>
+{{ match.awayScore }}-{{ match.homeScore }}
+<a routerLink="/team/{{match.idHomeTeam}}">{{ match.homeTeam }}</a>
+<p></p>
+<b>arbitri:</b><br />
 <ul>
-  <li *ngFor='let refree of match.matcherefrees'>
-    {{refree.name}}
+  <li *ngFor="let refree of match.matcherefrees">
+    {{ refree.name }}
   </li>
 </ul>

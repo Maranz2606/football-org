@@ -6,12 +6,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MatchComponent } from './match/match.component';
 import { MatchDetailComponent } from './match-detail/match-detail.component';
+import { TeamDetailComponent } from './team-detail/team-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MatchComponent,
-    MatchDetailComponent
+    MatchDetailComponent,
+    TeamDetailComponent
   ],
   imports: [
     BrowserModule,

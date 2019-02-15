@@ -13,6 +13,7 @@ import { MatchDetailComponent } from './match-detail/match-detail.component';
 export class AppComponent {
   matches: Match[] = [];
   matchSelected: Match;
+  teamSelected: Team;
 
   constructor(private request: RequestService) {
     const successhandler = response => {

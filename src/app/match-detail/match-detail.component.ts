@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, Input } from '@angular/core';
 import { Match } from '../model/Match';
+import { Team } from '../model/Team';
 
 @Component({
   selector: 'app-match-detail',
@@ -10,6 +11,7 @@ export class MatchDetailComponent implements OnInit {
 
   @Input()
   match: Match;
+  teams: Team;
 
   constructor() { }
 
