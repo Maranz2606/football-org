@@ -13,28 +13,15 @@ import { RequestService } from "../request.service";
 export class TeamDetailComponent implements OnInit {
 
   @Input()
-  title = "Partite e risultati per oggi";
-  url = "https://api.football-data.org/v2/teams";
-  team = {};
+  team: Team;
 
 
-  constructor(private service: RequestService,  private route: ActivatedRoute) {}
+  constructor() {}
 
-  getTeam() : void {
-    const id = this.route.snapshot.paramMap.get("id"); //id parameter that defines the team to search
-    const urlReq = `${this.url}/${id}`; //enddpoint correctly builded by concat url/id
-    this.service.getData(urlReq)
-      .subscribe(
-        data => {
-          this.team = data;
-          console.log(data);
-        },
-        error=> console.log(error)
-      )
-    }
 
-  ngOnInit(): void {
-    this.getTeam();
+
+  ngOnInit() {
+
 
   }
 }

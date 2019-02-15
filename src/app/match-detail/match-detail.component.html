@@ -2,9 +2,9 @@
 <p></p>
 
 <h3>giornata {{ match.matchday }} - {{ match.matchdate }}</h3>
-<a routerLink="/team/{{match.idAwayTeam}}">{{ match.awayTeam }}</a>
+<span (click) = "teamSelected.emit(match.idAwayTeam)">{{ match.awayTeam }}</span>
 {{ match.awayScore }}-{{ match.homeScore }}
-<a routerLink="/team/{{match.idHomeTeam}}">{{ match.homeTeam }}</a>
+<span (click) = "teamSelected.emit(match.idHomeTeam)">{{ match.homeTeam }}</span>
 <p></p>
 <b>arbitri:</b><br />
 <ul>

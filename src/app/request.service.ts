@@ -42,6 +42,17 @@ export class RequestService {
     );
   }
 
+  getTeambyID(id :number): Observable<Team>{
+    const url = "http://api.football-data.org/v2/teams" + "/" + id;
+    console.log(url);
+    return this.http.get(url, httpOptions).pipe(
+      map((response: Team[]) => {
+        console.log(response);
+        return Team.convTeamJson(response);
+      })
+    );
+  }
+
   getData(url: string) {
     return this.http.get(url, {
       headers: { "X-Auth-Token": "aa89ef54a73b4df6a2e389906426b90b" }

@@ -35,4 +35,14 @@ export class AppComponent {
         console.log(error);
       });
   }
+
+  teamAfterSelection(id: number) {
+    console.log(id);
+    this.request.getTeambyID(id)
+      .subscribe(TeamDetail => {
+        this.teamSelected = TeamDetail;
+      }, (error) => {
+        console.log(error);
+      });
+  }
 }

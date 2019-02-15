@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, Input } from '@angular/core';
+import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
 import { Match } from '../model/Match';
 import { Team } from '../model/Team';
 
@@ -11,7 +11,11 @@ export class MatchDetailComponent implements OnInit {
 
   @Input()
   match: Match;
-  teams: Team;
+  @Input()
+  team: Team;
+
+  @Output()
+  teamSelected = new EventEmitter<Team>();
 
   constructor() { }
 

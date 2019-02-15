@@ -1,3 +1,18 @@
-<p>
-  team-detail works!
-</p>
+<p></p>
+   <b>{{team.name}}</b> <br>
+   stadio: {{team.venue}}<br>
+   competizioni attive:
+   <ul>
+     <li *ngFor="let comp of team.activecomp">
+       {{comp.name}}
+
+     </li>
+   </ul><br>
+   giocatori
+   <ul>
+     <li *ngFor="let player of team.squad">
+       {{player.name}} - {{player.position}}
+
+     </li>
+   </ul>
+
