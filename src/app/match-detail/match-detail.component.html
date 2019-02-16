@@ -1,12 +1,17 @@
 <h2>Match detail</h2>
 <p></p>
 
-<h3>giornata {{ match.matchday }} - {{ match.matchdate }}</h3>
-<span (click) = "teamSelected.emit(match.idAwayTeam)">{{ match.awayTeam }}</span>
-{{ match.awayScore }}-{{ match.homeScore }}
-<span (click) = "teamSelected.emit(match.idHomeTeam)">{{ match.homeTeam }}</span>
+<h3>Giornata {{ match.matchday }} - {{ match.matchdate }}</h3>
+<span class="match" (click)="teamSelected.emit(match.idHomeTeam)">{{
+  match.homeTeam
+}}</span>
+{{ match.homeScore }}-{{ match.awayScore }}
+<span class="match" (click)="teamSelected.emit(match.idAwayTeam)">{{
+  match.awayTeam
+}}</span>
+
 <p></p>
-<b>arbitri:</b><br />
+<b>Arbitri:</b><br />
 <ul>
   <li *ngFor="let refree of match.matcherefrees">
     {{ refree.name }}

@@ -1,18 +1,19 @@
-<p></p>
+<div class="team">
    <b>{{team.name}}</b> <br>
-   stadio: {{team.venue}}<br>
-   competizioni attive:
+   Stadio: {{team.venue}}<br>
+   Competizioni attive:
    <ul>
      <li *ngFor="let comp of team.activecomp">
        {{comp.name}}
 
      </li>
    </ul><br>
-   giocatori
+   Formazione
    <ul>
      <li *ngFor="let player of team.squad">
-       {{player.name}} - {{player.position}}
-
+        {{player.name}} - {{player.position}}
      </li>
    </ul>
+</div>
+
 
